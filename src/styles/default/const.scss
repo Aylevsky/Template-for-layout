@@ -1,0 +1,32 @@
+$fonts: (
+  main: (
+    "Inter",
+    "sans-serif",
+  ),
+);
+
+$colors: (
+  main: #00b9b6,
+  text: (
+    main: #000,
+  ),
+);
+
+$media: (
+  sm: (
+    width: 360px,
+    container: 100%,
+  ),
+  md: (
+    width: 768px,
+    container: 688px,
+  ),
+  lg: (
+    width: 1024px,
+    container: 944px,
+  ),
+  xl: (
+    width: 1200px,
+    container: 1120px,
+  ),
+);
