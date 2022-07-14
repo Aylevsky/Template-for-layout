@@ -45,7 +45,7 @@ export const path = {
     pug: `${srcFolder}/**/*.pug`,
     scss: `${srcFolder}/**/*.scss`,
     js: `${srcFolder}/**/*.js`,
-    blocksImages: `${srcFolder}/blocks/**/*.{jpg,jpeg,png,gif,webp}`,
+    blocksImages: `${srcFolder}/blocks/**/*.{jpg,jpeg,png,gif,webp,svg}`,
     images: `${srcFolder}/images/*.{jpg,jpeg,png,svg,gif,webp,ico}`,
     copyFiles: [
       `${srcFolder}/**/*.*`,
