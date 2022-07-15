@@ -5,10 +5,23 @@
   font-family: map-get($fonts, main);
 }
 
+div,
+header,
+footer,
+main,
+form {
+  display: flex;
+}
+
 html,
 body {
   width: 100%;
   height: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 html {

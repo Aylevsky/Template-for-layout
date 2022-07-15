@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin-top: auto;
+
+  &__logo {
+    display: flex;
+    img {
+      height: 0;
+      width: 0;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+/**
+ * Миксин который позволяет создавать отзывчивые свойства.
+ * Их значение меняется в зависимости от размера экрана
+**/
+@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+  $maxWidth: strip-unit(map-get($media, xl, width));
+  $maxWidthContainer: strip-unit(map-get($media, xl, container));
+  $addSize: $startSize - $minSize;
+  $mobileWidth: map-get($media, sm, width);
+  @if $type == 1 {
+    // Max
+    #{$property}: $startSize + px;
+    @media (max-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(
+        #{$minSize + px} + #{$addSize} *
+          ((100vw - #{$mobileWidth}) / #{$maxWidthContainer - #{$mobileWidth}})
+      );
+    }
+  } @else if $type == 2 {
+    // Min
+    #{$property}: $startSize + px;
+    @media (min-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(
+        #{$minSize + px} + #{$addSize} *
+          ((100vw - #{$mobileWidth}) / #{$maxWidth - #{$mobileWidth}})
+      );
+    }
+  } @else {
+    // Всегда
+    #{$property}: calc(
+      #{$minSize +
+        px} +
+        #{$addSize} *
+        ((100vw - #{$mobileWidth}) / #{$maxWidth - #{$mobileWidth}})
+    );
+  }
+}
