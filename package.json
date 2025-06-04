@@ -1,7 +1,7 @@
 {
-  "name": "app",
-  "version": "1.0.0",
-  "description": "Мой стандартный шаблон для вёрстки",
+  "name": "Template for layout",
+  "version": "4.0.1",
+  "description": "Стандартный шаблон для вёрстки",
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
@@ -20,7 +20,7 @@
     "html",
     "pug"
   ],
-  "author": "Dmitry A",
+  "author": "Dmitry Aylevsky",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.27.7",
