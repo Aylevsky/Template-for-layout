@@ -2,14 +2,14 @@
 
 **Developer:** Dmitry Aylevsky (Дмитрий Айлевский)
 
-**Date of update:** 22.06.2024
+**Date of update:** 04.06.2025
 
 **Contacts:**  
 
 - **Email:** Aylevsky.work@gmail.com
 - **Telegram:** @Aylevsky
 
-Version of template: v_4
+Version of template: v_4.0.1
 
 Link on template: [https://github.com/Aylevsky/template-for-layout](https://github.com/Aylevsky/template-for-layout)
 
