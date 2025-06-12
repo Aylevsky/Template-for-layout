@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  &__logo {
+    display: flex;
+    transition: 0.4s;
+    
+    &:hover {
+      opacity: 0.8;
+    }
+
+    img {
+      //@size (130, 90, 50, 30);
+    }
+  }
+}
