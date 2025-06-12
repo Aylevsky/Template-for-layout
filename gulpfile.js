@@ -17,12 +17,14 @@ import { otfToTtf, ttfToWoff, fontStyle } from './gulp/tasks/fonts.js';
 import { createSvgSprite } from './gulp/tasks/create-svg-sprite.js';
 import { zip } from './gulp/tasks/zip.js';
 import { ftpDeploy } from './gulp/tasks/ftp-deploy.js';
+import { pug } from './gulp/tasks/pug.js';
 
 const isBuild = process.argv.includes('--build');
 const browserSyncInstance = browserSync.create();
 
 const handleServer = server.bind(null, browserSyncInstance);
 const handleHTML = html.bind(null, isBuild, browserSyncInstance);
+const handlePUG = pug.bind(null, isBuild, browserSyncInstance);
 const handleSCSS = scss.bind(null, isBuild, browserSyncInstance);
 const handleJS = javascript.bind(null, !isBuild, browserSyncInstance);
 const handleImages = images.bind(null, isBuild, browserSyncInstance);
@@ -31,11 +33,12 @@ const handleImages = images.bind(null, isBuild, browserSyncInstance);
  * Наблюдатель за изменениями в файлах
  */
 function watcher() {
-	gulp.watch(filePaths.watch.static, copy);
-	gulp.watch(filePaths.watch.html, handleHTML);
-	gulp.watch(filePaths.watch.scss, handleSCSS);
-	gulp.watch(filePaths.watch.js, handleJS);
-	gulp.watch(filePaths.watch.images, handleImages);
+  gulp.watch(filePaths.watch.static, copy);
+  gulp.watch(filePaths.watch.html, handleHTML);
+  gulp.watch(filePaths.watch.pug, handlePUG);
+  gulp.watch(filePaths.watch.scss, handleSCSS);
+  gulp.watch(filePaths.watch.js, handleJS);
+  gulp.watch(filePaths.watch.images, handleImages);
 }
 
 /**
@@ -46,7 +49,7 @@ const fonts = gulp.series(otfToTtf, ttfToWoff, fontStyle);
 /**
  * Параллельные задачи в режиме разработки
  * */
-const devTasks = gulp.parallel(copy, copyRootFiles, createSvgSprite, handleHTML, handleSCSS, handleJS, handleImages);
+const devTasks = gulp.parallel(copy, copyRootFiles, createSvgSprite, handleHTML, handlePUG, handleSCSS, handleJS, handleImages);
 
 /**
  * Основные задачи
