@@ -40,10 +40,7 @@ export const scss = (isBuild, serverInstance) => {
       postcssPresetEnv(),
       postcssGroupMedia({ sort: 'desktop-first' }),
     ])))
-
-    /** Раскомментировать если нужен не сжатый дубль файла стилей */
-    // .pipe(gulp.dest(filePaths.build.css))
-
+    .pipe(gulp.dest(filePaths.build.css))
     .pipe(plugins.if(isBuild, cleanCss()))
     .pipe(rename({ extname: '.min.css' }))
     .pipe(plugins.if(!isBuild, sourcemaps.write('.')))
