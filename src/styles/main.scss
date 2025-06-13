@@ -1,0 +1,15 @@
+/*****/
+
+/**
+ * DEFAULT
+**/
+@use "./default/fonts.scss";
+@use "./default/const.scss";
+@use "./default/base.scss";
+@use "./default/functions.scss";
+@use "./default/mixins.scss";
+
+/**
+ * BLOCKS
+**/
+@use "../blocks/common/**/*.scss";
