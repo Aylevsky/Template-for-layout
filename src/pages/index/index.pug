@@ -1,8 +1,13 @@
+include ../../components/common/head/head.pug
+include ../../components/common/header/header.pug
+include ../../components/common/footer/footer.pug
+
 doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title Index page 
-  body 
-    h1 Index
+html(lang="ru")
+  +head("Template")
+  body
+    //+header()
+    main.main.index
+
+    //+footer()
+    include ../../components/common/footer-includes/footer-includes.pug
