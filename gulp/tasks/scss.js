@@ -1,3 +1,7 @@
+/**
+ * Файл содержит отбаботчик SCSS
+ */
+
 import gulp from 'gulp';
 import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
