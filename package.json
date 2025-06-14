@@ -1,6 +1,6 @@
 {
 	"name": "template-for-layout",
-	"version": "2.2.0",
+	"version": "2.3.4",
 	"description": "Стартовый шаблон для вёрстки",
 	"main": "gulpfile.js",
 	"type": "module",
