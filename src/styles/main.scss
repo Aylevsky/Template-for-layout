@@ -3,13 +3,13 @@
 /**
  * DEFAULT
 **/
-@use "./default/fonts.scss";
-@use "./default/const.scss";
-@use "./default/base.scss";
-@use "./default/functions.scss";
-@use "./default/mixins.scss";
+@import "./default/fonts.scss";
+@import "./default/const.scss";
+@import "./default/base.scss";
+@import "./default/functions.scss";
+@import "./default/mixins.scss";
 
 /**
  * BLOCKS
 **/
-@use "../blocks/common/**/*.scss";
+@import "../components/common/**/*.scss";

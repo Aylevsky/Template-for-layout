@@ -1,14 +1,15 @@
-@use "./const.scss";
 @use "sass:math";
-@use "sass:map";
+@import "./const.scss";
 
-// Миксин который позволяет создавать отзывчивые свойства.
-// Их значение меняется в зависимости от размера экрана
+/**
+  * Миксин который позволяет создавать отзывчивые свойства.
+  * Их значение меняется в зависимости от размера экрана.
+*/
 @mixin adaptiv-value($property, $startSize, $minSize, $type) {
-	$maxWidth: strip-unit(map.get($media, xl, width));
-	$maxWidthContainer: strip-unit(map.get($media, xl, container));
+	$maxWidth: strip-unit(map-get($media, xl, width));
+	$maxWidthContainer: strip-unit(map-get($media, xl, container));
 	$addSize: $startSize - $minSize;
-	$mobileWidth: strip-unit(map.get($media, sm, width));
+	$mobileWidth: strip-unit(map-get($media, sm, width));
 
 	@if $type ==1 {
 		// Max
@@ -30,38 +31,47 @@
 	}
 }
 
+/**
+  * Сокращение для медиазапросов.
+*/
 @mixin media($minmax, $media) {
 	@if $media == "sm" {
-		@media (#{$minmax}-width: map.get($media, "sm", "width")) {
+		@media (#{$minmax}-width: map-get($media, "sm", "width")) {
 			@content;
 		}
 	} @else if $media == "md" {
-		@media (#{$minmax}-width: map.get($media, "md", "width")) {
+		@media (#{$minmax}-width: map-get($media, "md", "width")) {
 			@content;
 		}
 	} @else if $media == "lg" {
-		@media (#{$minmax}-width: map.get($media, "lg", "width")) {
+		@media (#{$minmax}-width: map-get($media, "lg", "width")) {
 			@content;
 		}
 	} @else if $media == "xl" {
-		@media (#{$minmax}-width: map.get($media, "xl", "width")) {
+		@media (#{$minmax}-width: map-get($media, "xl", "width")) {
 			@content;
 		}
 	}
 }
 
-/*
-  * LINE HEIGHT
+/**
+  * Устанавливает line-height в процентах.
+  *
+  * Переводит line-height из пт в проценты.
 */
 @mixin line-height($font-size, $line-height) {
 	$lineHeightInPercent: math.div($line-height, math.div($font-size, 100));
 	line-height: #{$lineHeightInPercent + "%"};
 }
 
-/*
-  * SIZE
+/**
+  * Адаптивный размер.
+  *
+  * Добавляет адаптивную длинну и ширину. Если получает 2 аргумента, а не 4
+  * считает что блок квадратный и использует $w и $w2 не только для длинны,
+  * но и для ширины.
 */
-@mixin a_size($w, $w2, $h: "none", $h2: "none") {
+@mixin ad-size($w, $w2, $h: "none", $h2: "none") {
 	@if ($h == "none") {
 		@include adaptiv-value(width, $w, $w2, 1);
 		@include adaptiv-value(height, $w, $w2, 1);
@@ -71,6 +81,11 @@
 	}
 }
 
+/**
+  * Миксин размера.
+  * Позволяет удобно задавать ширину и длинну.
+  * Если аргумент один то ширина и длинна будут одинаковыми.
+*/
 @mixin size($w, $h: "none") {
 	@if ($h == "none") {
 		width: $w;
