@@ -13,7 +13,10 @@ export const filePaths = {
   },
   src: {
     js: `${srcFolder}/scripts/*.js`,
-    images: `${srcFolder}/images/**/*.{jpg,jpeg,png,gif,webp}`,
+    images: [
+      `${srcFolder}/images/**/*.{jpg,jpeg,png,gif,webp}`,
+      `${srcFolder}/components/**/*.{jpg,jpeg,png,gif,webp}`
+    ],
     svg: `${srcFolder}/images/**/*.svg`,
     scss: [`${srcFolder}/styles/main.scss`, `${srcFolder}/pages/**/*.scss`],
     html: `${srcFolder}/pages/**/*.html`,
