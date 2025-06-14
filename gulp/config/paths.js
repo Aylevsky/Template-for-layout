@@ -16,7 +16,7 @@ export const filePaths = {
     images: `${srcFolder}/images/**/*.{jpg,jpeg,png,gif,webp}`,
     svg: `${srcFolder}/images/**/*.svg`,
     scss: [`${srcFolder}/styles/main.scss`, `${srcFolder}/pages/**/*.scss`],
-    html: `${srcFolder}/*.html`,
+    html: `${srcFolder}/pages/**/*.html`,
     pug: `${srcFolder}/pages/**/*.pug`,
     static: `${srcFolder}/static/**/*.*`,
     svgIcons: `${srcFolder}/icons/*.svg`,
