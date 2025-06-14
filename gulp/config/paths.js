@@ -12,13 +12,10 @@ export const filePaths = {
     static: `${buildFolder}/static/`,
   },
   src: {
-    js: `${srcFolder}/scripts/*.js`,
-    images: [
-      `${srcFolder}/images/**/*.{jpg,jpeg,png,gif,webp}`,
-      `${srcFolder}/components/**/*.{jpg,jpeg,png,gif,webp}`
-    ],
+    js: `${srcFolder}/js/main.js`,
+    images: `${srcFolder}/**/*.{jpg,jpeg,png,gif,webp}`,
     svg: `${srcFolder}/images/**/*.svg`,
-    scss: [`${srcFolder}/styles/main.scss`, `${srcFolder}/pages/**/*.scss`],
+    scss: `${srcFolder}/styles/main.scss`,
     html: `${srcFolder}/pages/**/*.html`,
     pug: `${srcFolder}/pages/**/*.pug`,
     static: `${srcFolder}/static/**/*.*`,
@@ -27,8 +24,8 @@ export const filePaths = {
     fonts: `${srcFolder}/fonts/`,
   },
   watch: {
-    js: `${srcFolder}/scripts/**/*.js`,
-    scss: `${srcFolder}/**/*.scss`,
+    js: `${srcFolder}/**/*.js`,
+    scss: [`${srcFolder}/styles/main.scss`, `${srcFolder}/pages/**/*.scss`],
     html: `${srcFolder}/**/*.html`,
     pug: `${srcFolder}/**/*.pug`,
     images: `${srcFolder}/**/*.{jpg,jpeg,png,svg,gif,webp,ico}`,

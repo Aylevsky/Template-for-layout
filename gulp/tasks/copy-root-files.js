@@ -5,15 +5,15 @@ import { filePaths } from '../config/paths.js';
 import { logger } from '../config/logger.js';
 
 export const copyRootFiles = () => {
-	const config = {
-		dot: true,
-		allowEmpty: true,
-	};
+  const config = {
+    dot: true,
+    allowEmpty: true,
+  };
 
-	/** Добавляем файлы, которые нужны в корне проекта */
-	const files = ['favicon.ico', '.htaccess'];
+  // Добавляем файлы, которые нужны в корне проекта
+  const files = ['favicon.ico', '.htaccess'];
 
-	return gulp.src(plugins.concat(filePaths.srcFolder, files), config)
-		.pipe(logger.handleError('COPY ROOT FILES'))
-		.pipe(gulp.dest(filePaths.buildFolder));
+  return gulp.src(plugins.concat(filePaths.srcFolder, files), config)
+    .pipe(logger.handleError('COPY ROOT FILES'))
+    .pipe(gulp.dest(filePaths.buildFolder));
 };
